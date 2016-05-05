@@ -6,8 +6,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-   protected $table='users';
-   protected $fillable=['usuario','nombre','password','perfiles_id','ubicaciones_id','activo'];
+  public $timestamps = false;
+   protected $table='usuarios';
+   protected $fillable=['usuario','nombre','contrasena','perfiles_id','ubicaciones_id','activo'];
    protected $guarded=['id'];
 
     /**
@@ -15,6 +16,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+   
+    
     protected $hidden = [
         'password', 'remember_token',
     ];

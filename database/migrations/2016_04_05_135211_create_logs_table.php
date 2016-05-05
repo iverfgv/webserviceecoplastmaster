@@ -15,10 +15,10 @@ class CreateLogsTable extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('usuarios_id')->unsigned();
-            $table->foreign('usuarios_id')->references('id')->on('users');
+            $table->foreign('usuarios_id')->references('id')->on('usuarios');
             $table->text('log',250);
             $table->timestamp('fecha');            
-            $table->timestamps();
+         
         });
     }
 

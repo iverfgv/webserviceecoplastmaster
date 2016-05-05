@@ -14,13 +14,12 @@ class CreateAccesosTable extends Migration
     {
         Schema::create('accesos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('empresas_id')->unsigned();
-            $table->foreign('empresas_id')->references('id')->on('empresas');
             $table->string('acceso',100);
             $table->text('nombre');
             $table->string('email',255);
             $table->tinyInteger('activo');
-            $table->timestamps();
+            $table->integer('empresas_id')->unsigned();
+            $table->foreign('empresas_id')->references('id')->on('empresas');
         });
     }
 

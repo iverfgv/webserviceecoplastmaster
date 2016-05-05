@@ -13,12 +13,11 @@ class CreateEmpresasTable extends Migration
     public function up()
     {
         Schema::create('empresas', function (Blueprint $table) {
-             $table->increments('id');
-            $table->integer('tiposempresas_id')->unsigned();
-            $table->foreign('tiposempresas_id')->references('id')->on('tipoempresas');
+            $table->increments('id');
             $table->string('empresa',250);
             $table->text('razonsocial');
-            $table->timestamps();
+            $table->integer('tiposempresas_id')->unsigned();
+            $table->foreign('tiposempresas_id')->references('id')->on('tiposempresas');
         });
     }
 

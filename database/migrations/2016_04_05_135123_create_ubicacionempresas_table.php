@@ -12,14 +12,14 @@ class CreateUbicacionempresasTable extends Migration
      */
     public function up()
     {
-        Schema::create('ubicacionempresas', function (Blueprint $table) {
-             $table->increments('id');
+        Schema::create('ubicacionesempresas', function (Blueprint $table) {
+            $table->increments('id');
             $table->bigInteger('idubicacionempresas');
             $table->integer('ubicaciones_id')->unsigned();
             $table->foreign('ubicaciones_id')->references('id')->on('ubicaciones');
             $table->integer('empresas_id')->unsigned();            
             $table->foreign('empresas_id')->references('id')->on('empresas');
-            $table->timestamps();
+            
         });
     }
 
@@ -30,6 +30,6 @@ class CreateUbicacionempresasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ubicacionempresas');
+        Schema::drop('ubicacionesempresas');
     }
 }

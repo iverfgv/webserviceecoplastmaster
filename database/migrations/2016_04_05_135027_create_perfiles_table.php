@@ -23,38 +23,9 @@ class CreatePerfilesTable extends Migration
             $table->tinyInteger('administracion');
             $table->tinyInteger('reportes');
             $table->tinyInteger('activo');
-            $table->timestamps();
+           
         });
 
-        perfiles::create([
-                'perfil'=>'iver fabian gonzalez vidal',    
-                'pesaje'=>'1',
-                'supervisor'=>'1',
-                'embarques'=>'1',
-                'administracion'=>'1',
-                'reportes'=>'1',
-                'activo'=>'1',
-                ]);
-
-         perfiles::create([
-                'perfil'=>'Raul herrera lopez',    
-                'pesaje'=>'1',
-                'supervisor'=>'1',
-                'embarques'=>'1',
-                'administracion'=>'1',
-                'reportes'=>'1',
-                'activo'=>'1',
-                ]);
-
-          perfiles::create([
-                'perfil'=>'roman albores',    
-                'pesaje'=>'1',
-                'supervisor'=>'1',
-                'embarques'=>'1',
-                'administracion'=>'1',
-                'reportes'=>'1',
-                'activo'=>'1',
-                ]);
     }
 
     /**

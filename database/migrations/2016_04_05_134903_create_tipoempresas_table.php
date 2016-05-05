@@ -12,13 +12,12 @@ class CreateTipoempresasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipoempresas', function (Blueprint $table) {
-             $table->increments('id');
-            $table->string('tipoempresas',100);
+        Schema::create('tiposempresas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tipoempresa',100);
             $table->tinyInteger('cliente');
             $table->tinyInteger('provedor');
             $table->tinyInteger('activo');
-            $table->timestamps();
         });
     }
 
@@ -29,6 +28,6 @@ class CreateTipoempresasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tipoempresas');
+        Schema::drop('tiposempresas');
     }
 }

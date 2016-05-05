@@ -56,10 +56,24 @@ return [
 
         's3' => [
             'driver' => 's3',
+            'key' => 'AKIAICFWC33Q2RRIHAKQ',
+            'secret' => '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',
+            'region' => 'us-west-2',
+            'bucket' => 'ecoplast',
+            'visibility' => 'public',
+            'http'    => [
+                'verify' => false
+            ]
+        ],
+
+        'rackspace' => [
+            'driver' => 'rackspace',
+            'username' => 'your-username',
             'key' => 'your-key',
-            'secret' => 'your-secret',
-            'region' => 'your-region',
-            'bucket' => 'your-bucket',
+            'container' => 'your-container',
+            'endpoint' => 'https://identity.api.rackspacecloud.com/v2.0/',
+            'region' => 'IAD',
+            'url_type' => 'publicURL',
         ],
 
     ],

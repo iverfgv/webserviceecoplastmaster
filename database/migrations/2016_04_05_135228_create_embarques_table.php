@@ -17,7 +17,7 @@ class CreateEmbarquesTable extends Migration
         Schema::create('embarques', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('usuarios_id')->unsigned();
-            $table->foreign('usuarios_id')->references('id')->on('users');
+            $table->foreign('usuarios_id')->references('id')->on('usuarios');
             $table->integer('materiales_id')->unsigned();
             $table->foreign('materiales_id')->references('id')->on('materiales');
             $table->integer('ubicaciones_id')->unsigned();
@@ -27,52 +27,11 @@ class CreateEmbarquesTable extends Migration
             $table->timestamp('fecha');
             $table->string('codigocontrol',100);
             $table->tinyInteger('cancelado');
-            $table->timestamps();
+            $table->string('notasalidaecoplast',20);
+            $table->string('notasalidacliente',20);
         });
 
-        embarques::create([
-                'usuarios_id'=>'1',
-                'materiales_id'=>'1',
-                'ubicaciones_id'=>'1',    
-                'peso'=>'190.5',
-                'fechalocal'=>'2016/12/04 01:49:29',               
-                'fecha'=>'2016/12/04',
-                'codigocontrol'=>'15d389de53fafc4b08300a9a03d40729',
-                'cancelado'=>'0',
-                ]);
-
-        embarques::create([
-                'usuarios_id'=>'1',
-                'materiales_id'=>'1',
-                'ubicaciones_id'=>'1',    
-                'peso'=>'280.5',
-                'fechalocal'=>'2016/11/04 01:49:29',               
-                'fecha'=>'2016/11/04',
-                'codigocontrol'=>'218309s8d080joijo982309',
-                'cancelado'=>'0',
-                ]);
-
-         embarques::create([
-                'usuarios_id'=>'2',
-                'materiales_id'=>'2',
-                'ubicaciones_id'=>'2',    
-                'peso'=>'180.5',
-                'fechalocal'=>'2016/09/04 01:49:29',               
-                'fecha'=>'2016/09/04',
-                'codigocontrol'=>'sadoua0sd7a9s79879',
-                'cancelado'=>'0',
-                ]);
-
-          embarques::create([
-                'usuarios_id'=>'3',
-                'materiales_id'=>'3',
-                'ubicaciones_id'=>'3',    
-                'peso'=>'370.5',
-                'fechalocal'=>'2016/12/04 01:49:29',               
-                'fecha'=>'2016/12/04',
-                'codigocontrol'=>'nasody9u89u23989',
-                'cancelado'=>'0',
-                ]);
+        
     }
 
     /**

@@ -18,18 +18,8 @@ class CreateGruposTable extends Migration
             $table->increments('id');
             $table->string('grupo',50);
             $table->string('clave',10);
-            $table->timestamps();
         });
 
-        grupos::create([
-                'grupo'=>'grupo A',    
-                'clave'=>1,
-                ]);
-
-         grupos::create([
-                'grupo'=>'grupo B',    
-                'clave'=>2,
-                ]);
     }
 
 

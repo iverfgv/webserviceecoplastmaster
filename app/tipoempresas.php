@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class tipoempresas extends Model
-{
-    protected $table = 'tipoempresas';
-    protected $fillable = ['tipoempresas','cliente','proveedor','activo'];
+{ 
+	public $timestamps = false;
+    protected $table = 'tiposempresas';
+    protected $fillable = ['tipoempresa','cliente','proveedor','activo'];
     protected $guarded=['id'];
 }

@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class accesos extends Model
-{
-    protected  $table='users';
+{   public $timestamps = false;
+    protected  $table='accesos';
 
-   protected $fillable=['perfiles_id','ubicaciones_id','nombre','password','activo','remember_token'];
+   protected $fillable=['acceso','nombre','email','activo','empresas_id'];
 
     protected $guarded=['id'];
 }
